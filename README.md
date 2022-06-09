@@ -1,3 +1,21 @@
+# Estrutura do Frontend
+                    Citel Produtos
+
+ADICIONAR PRODUTO           LISTA DE PRODUTOS
+
+ÍconeCat Categoria          Categoria   Marca   Fabricação Validade    Preço   Editar Excluir
+
+ÍconeMar Marca
+
+ÍconeFab Fabricação
+
+ÍconeVal Validade
+
+ÍconePre Preço
+
+BotInser INSERIR
+
+
 # CitelP
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
