@@ -9,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class ListProductComponent implements OnInit {
 
   listaProduto: Product[] = [
-    { categoria: 'info', marca: 'positivo', fabricacao: new Date(), validade: new Date(), preco: 15.90},
-    { categoria: 'info', marca: 'huawei', fabricacao: new Date(), validade: new Date(), preco: 16.90}
+    { categoria: 'info', nome: 'mouse', fabricacao: new Date(), validade: new Date(), preco: 15.90},
+    { categoria: 'info', nome: 'impressora', fabricacao: new Date(), validade: new Date(), preco: 16.90}
   ]
 
   constructor() { }

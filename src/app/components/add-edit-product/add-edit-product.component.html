@@ -1,5 +1,40 @@
 <h3 class="mt-3">Adicionar Produto</h3>
 
-<form action="">
+<form [formGroup]="adicionarProduto" (ngSubmit)="adicionar()">
 
+  <div class="mb-3">
+    <label for="categoria" class="form-label">Categoria</label>
+    <input formControlName="categoria"  type="text" class="form-control" id="categoria" placeholder="Insira Uma Categoria" autocomplete="off">
+    <span *ngIf="adicionarProduto.get('categoria')?.invalid && adicionarProduto.get('categoria')?.touched" class="text-danger">
+      A <strong>Categoria</strong> é obrigatória!
+    </span>
+  </div>
+
+  <div class="mb-3">
+    <label for="nome" class="form-label">Nome</label>
+    <input formControlName="nome" type="text" class="form-control" id="marca" placeholder="Insira um Nome" autocomplete="off">
+    <span *ngIf="adicionarProduto.get('nome')?.invalid && adicionarProduto.get('nome')?.touched" class="text-danger">
+      O <strong>Nome</strong> é obrigatório!
+    </span>
+  </div>
+
+  <div class="mb-3">
+    <label for="fabricacao" class="form-label">Fabricação</label>
+    <input formControlName="fabricacao" type="text" class="form-control" id="fabricacao" placeholder="Insira a Data de Frabricação">
+  </div>
+
+  <div class="mb-3">
+    <label for="validade" class="form-label">Validade</label>
+    <input formControlName="validade" type="text" class="form-control" id="validade" placeholder="Insira a Data de Validade">
+  </div>
+
+  <label for="preco" class="form-label">Preço</label>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text">$</span>
+      <input formControlName="preco" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" placeholder="Insira um Preço" id="preco">
+    </div>
+
+    <button type="submit" [disabled]="adicionarProduto.invalid" class="btn btn-primary float-end">Cadastrar</button>
+    <button type="button" routerLink="/" class="btn btn-secondary">Voltar</button>
 </form>
