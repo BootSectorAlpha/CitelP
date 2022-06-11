@@ -19,7 +19,11 @@
   </thead>
   <tbody>
     <tr *ngFor="let produto of listaProduto">
-      <td>{{produto.categoria}}</td>
+      <td>
+        <a [routerLink]="['/see', 1]">
+          {{produto.categoria}}
+        </a>
+      </td>
       <td>{{produto.nome}}</td>
       <td>{{produto.fabricacao | date:'dd/MM/yyyy'}}</td>
       <td>{{produto.validade | date:'dd/MM/yyyy'}}</td>
