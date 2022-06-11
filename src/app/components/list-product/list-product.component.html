@@ -1,0 +1,43 @@
+<div class="row mt-3">
+  <div class="col-lg-6">
+    <h3>Lista de Produtos</h3>
+  </div>
+  <div class="col-lg-6">
+    <button class="btn btn-primary float-end" routerLink="/adicionar" >Novo Produto</button>
+  </div>
+</div>
+
+<table  *ngIf="listaProduto.length > 0" class="table table-hover-mt-3">
+  <thead>
+    <tr>
+      <td>Categoria</td>
+      <td>Produto</td>
+      <td>Fabricação</td>
+      <td>Validade</td>
+      <td>Preço</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let produto of listaProduto">
+      <td>
+        <a [routerLink]="['/see', 1]">
+          {{produto.categoria}}
+        </a>
+      </td>
+      <td>{{produto.nome}}</td>
+      <td>{{produto.fabricacao | date:'dd/MM/yyyy'}}</td>
+      <td>{{produto.validade | date:'dd/MM/yyyy'}}</td>
+      <td>{{produto.preco}}</td>
+      <td>
+        <button class="btn btn-primary btn-sm float-end">Editar</button>
+      </td>
+      <td>
+        <button class="btn btn-danger btn-sm float-end">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="listaProduto.length == 0" class="row mt-5">
+  <h5>Não há Produtos Para Mostrar!</h5>
+</div>
