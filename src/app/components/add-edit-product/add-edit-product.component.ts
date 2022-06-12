@@ -17,11 +17,11 @@ export class AddEditProductComponent implements OnInit {
               private _produtoService: ProductService,
               private router: Router) {
     this.adicionarProduto = this.fb.group({
-      categoria: ['', Validators.required],
-      nome: ['', Validators.required],
-      fabricacao: ['', Validators.required],
-      validade: ['', Validators.required],
-      preco: ['', Validators.required]
+      // categoria: ['', Validators.required],
+      // nome: ['', Validators.required],
+      // fabricacao: ['', Validators.required],
+      // validade: ['', Validators.required],
+      // preco: ['', Validators.required]
     })
   }
 
@@ -32,6 +32,7 @@ export class AddEditProductComponent implements OnInit {
 
   adicionar()
   {
+    // const produto: Produto =
     const produto: Produto =
     {
       categoria: this.adicionarProduto.get('categoria')?.value,
@@ -41,11 +42,12 @@ export class AddEditProductComponent implements OnInit {
       preco: this.adicionarProduto.get('preco')?.value
     }
 
-    this._produtoService.salvarProduto(produto).subscribe(data => {
+    this._produtoService.adicionar(produto).subscribe(data => {
       this.router.navigate(['/']);
     }, error => {
       console.log(error);
     });
+
 
   }
 }
