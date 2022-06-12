@@ -1,5 +1,5 @@
 import { ProductService } from './../../services/product.service';
-import { Product } from './../../interfaces/Produto';
+import { Produto } from './../../interfaces/Produto';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -32,7 +32,7 @@ export class AddEditProductComponent implements OnInit {
 
   adicionar()
   {
-    const produto: Product =
+    const produto: Produto =
     {
       categoria: this.adicionarProduto.get('categoria')?.value,
       nome: this.adicionarProduto.get('nome')?.value,
