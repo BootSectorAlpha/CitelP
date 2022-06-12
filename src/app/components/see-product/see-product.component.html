@@ -1,7 +1,9 @@
-<h3>{{produto.categoria}}</h3>
-<h5>{{produto.nome}}</h5>
-<ul>
-  <li>{{produto.fabricacao}}</li>
-  <li>{{produto.validade}}</li>
-  <li>{{produto.preco}}</li>
-</ul>
+<div *ngIf="produto !== undefined">
+  <h3>{{produto.categoria}}</h3>
+  <h5>{{produto.nome}}</h5>
+    <ul>
+      <li>{{produto.fabricacao}}</li>
+      <li>{{produto.validade}}</li>
+      <li>{{produto.preco}}</li>
+    </ul>
+</div>

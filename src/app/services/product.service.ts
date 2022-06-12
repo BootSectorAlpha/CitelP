@@ -1,3 +1,4 @@
+import { Product } from './../interfaces/Produto';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -22,5 +23,9 @@ export class ProductService {
 
   getProduto(id: number): Observable<any> {
     return this.http.get(this.myAppUrl + this.myApiUrl + id);
+  }
+
+  salvarProduto(produto: Product): Observable<any> {
+    return this.http.post(this.myAppUrl + this.myApiUrl, produto);
   }
 }

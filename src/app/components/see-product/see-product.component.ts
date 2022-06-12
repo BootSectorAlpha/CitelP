@@ -1,3 +1,4 @@
+import { Product } from './../../interfaces/Produto';
 import { ProductService } from './../../services/product.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -10,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SeeProductComponent implements OnInit {
 
   id: number;
-  produto: any;
+  produto: Product | undefined;
 
   constructor(private aRoute: ActivatedRoute,
               private _produtoService: ProductService) {
