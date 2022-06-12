@@ -70,4 +70,3 @@ D:\Projetos\Git\CitelP\CitelP\CitelP\bin\Debug\net5.0\Microsoft.Extensions.Depen
 D:\Projetos\Git\CitelP\CitelP\CitelP\bin\Debug\net5.0\MySqlConnector.dll
 D:\Projetos\Git\CitelP\CitelP\CitelP\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
 D:\Projetos\Git\CitelP\CitelP\CitelP\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
-D:\Projetos\Git\CitelP\CitelP\CitelP\obj\Debug\net5.0\CitelP.csproj.CopyComplete
