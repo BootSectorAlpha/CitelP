@@ -29,7 +29,7 @@
       <td>{{produto.validade | date:'dd/MM/yyyy'}}</td>
       <td>{{produto.preco}}</td>
       <td>
-        <button class="btn btn-primary btn-sm float-end">Editar</button>
+        <button [routerLink]="['/editar', produto.id]" class="btn btn-primary btn-sm float-end">Editar</button>
       </td>
       <td>
         <button (click)="excluirProduto(produto.id)"  class="btn btn-danger btn-sm float-end">Excluir</button>

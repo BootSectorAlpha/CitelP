@@ -29,4 +29,8 @@ export class ProductService {
   adicionar(corpoProduto: Produto): Observable<any> {
     return this.http.post(this.myAppUrl + this.myApiUrl, corpoProduto);
   }
+
+  updateProduto(id: number, produto: Produto): Observable<any> {
+    return this.http.put(this.myAppUrl + this.myApiUrl + id, produto);
+  }
 }
