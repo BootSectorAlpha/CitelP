@@ -1,3 +1,4 @@
+import { ProductService } from './../../services/product.service';
 import { Product } from '../../interfaces/Produto';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,9 +14,17 @@ export class ListProductComponent implements OnInit {
     { categoria: 'info', nome: 'impressora', fabricacao: new Date(), validade: new Date(), preco: 16.90}
   ]
 
-  constructor() { }
+  constructor(private _produtoService: ProductService) { }
 
   ngOnInit(): void {
+    this.getProdutos();
   }
 
+  getProdutos(){
+    this._produtoService.getlistProdutos().subscribe(data => {
+      console.log(data);
+    }, error => {
+      console.log(error);
+    })
+  }
 }

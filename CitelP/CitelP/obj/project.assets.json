@@ -976,11 +976,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lutiell\\Desktop\\CitelP\\CitelP\\CitelP.csproj",
+      "projectUniqueName": "D:\\Projetos\\Git\\CitelP\\CitelP\\CitelP\\CitelP.csproj",
       "projectName": "CitelP",
-      "projectPath": "C:\\Users\\Lutiell\\Desktop\\CitelP\\CitelP\\CitelP.csproj",
+      "projectPath": "D:\\Projetos\\Git\\CitelP\\CitelP\\CitelP\\CitelP.csproj",
       "packagesPath": "C:\\Users\\Lutiell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lutiell\\Desktop\\CitelP\\CitelP\\obj\\",
+      "outputPath": "D:\\Projetos\\Git\\CitelP\\CitelP\\CitelP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Lutiell\\AppData\\Roaming\\NuGet\\NuGet.Config",
