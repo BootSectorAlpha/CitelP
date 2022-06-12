@@ -1,5 +1,7 @@
-import { Product } from '../../interfaces/Produto';
+import { ProductService } from './../../services/product.service';
+import { Produto } from '../../interfaces/Produto';
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-product',
@@ -8,14 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListProductComponent implements OnInit {
 
-  listaProduto: Product[] = [
-    { categoria: 'info', nome: 'mouse', fabricacao: new Date(), validade: new Date(), preco: 15.90},
-    { categoria: 'info', nome: 'impressora', fabricacao: new Date(), validade: new Date(), preco: 16.90}
-  ]
+  listaProduto: Produto[] = [];
 
-  constructor() { }
+  constructor(private _produtoService: ProductService,
+              private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    this.getProdutos();
+  }
+
+  getProdutos(){
+    this._produtoService.getlistProdutos().subscribe(data => {
+      this.listaProduto = data;
+    }, error => {
+      this.toastr.error('Ocorreu um erro!', 'Erro!');
+      console.log(error);
+    })
+  }
+
+  excluirProduto(id: any){
+    console.log(id);
+    this._produtoService.deleteProduto(id).subscribe(data => {
+      this.getProdutos();
+      this.toastr.error('O Produto foi Excluído com Sucesso!', 'Registro Excluído!');
+    }, error => {
+      this.toastr.error('Ocorreu um erro!', 'Erro!');
+      console.log(error);
+    })
   }
 
 }

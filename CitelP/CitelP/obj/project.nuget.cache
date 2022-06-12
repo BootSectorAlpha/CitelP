@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IIf4dSGsRe5yJtvuufzlTwJx6DVSSdGTpW2pvaI187f1NsbGNoZjNJFoO/P/BUHfcPNH7mV/bUdUrupMA0CpUA==",
+  "dgSpecHash": "FX01AsdrV0A2twmdd+qCUFchBRztG/ZX9q4qZz3YDoRoL1M68mRGwm4AqStBBrDUxl2DI9TLJkVHwdgrPAXDEQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lutiell\\Desktop\\CitelP\\CitelP\\CitelP.csproj",
+  "projectFilePath": "D:\\Projetos\\Git\\CitelP\\CitelP\\CitelP\\CitelP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lutiell\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Lutiell\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

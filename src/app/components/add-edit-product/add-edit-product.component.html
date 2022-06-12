@@ -1,6 +1,6 @@
-<h3 class="mt-3">Adicionar Produto</h3>
+<h3 class="mt-3">{{acao}} Produto</h3>
 
-<form [formGroup]="adicionarProduto" (ngSubmit)="adicionar()">
+<form [formGroup]="adicionarProduto" (ngSubmit)="adicionarEditarProduto()">
 
   <div class="mb-3">
     <label for="categoria" class="form-label">Categoria</label>
@@ -35,6 +35,8 @@
       <input formControlName="preco" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" placeholder="Insira um Preço" id="preco">
     </div>
 
-    <button type="submit" [disabled]="adicionarProduto.invalid" class="btn btn-primary float-end">Cadastrar</button>
+    <button type="submit" class="btn btn-primary float-end">Cadastrar</button>
     <button type="button" routerLink="/" class="btn btn-secondary">Voltar</button>
 </form>
+
+<!-- [disabled]="adicionarProduto.invalid" -->

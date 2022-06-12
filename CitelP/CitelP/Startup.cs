@@ -37,6 +37,13 @@ namespace CitelP
             string mySQLConnection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AppDbContext>(options =>
             options.UseMySql(mySQLConnection, ServerVersion.AutoDetect(mySQLConnection)));
+
+            services.AddCors(options =>
+            {
+              options.AddPolicy("CorsPolicy",
+                builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
+                );
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +55,8 @@ namespace CitelP
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CitelP v1"));
             }
+
+            app.UseCors("CorsPolicy");
 
             app.UseHttpsRedirection();
 
