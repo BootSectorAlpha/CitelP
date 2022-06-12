@@ -15,4 +15,12 @@ export class ProductService {
   getlistProdutos(): Observable<any>{
     return this.http.get(this.myAppUrl + this.myApiUrl);
   }
+
+  deleteProduto(id: number): Observable<any> {
+    return this.http.delete(this.myAppUrl + this.myApiUrl + id);
+  }
+
+  getProduto(id: number): Observable<any> {
+    return this.http.get(this.myAppUrl + this.myApiUrl + id);
+  }
 }

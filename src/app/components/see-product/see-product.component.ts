@@ -1,4 +1,6 @@
+import { ProductService } from './../../services/product.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-see-product',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeeProductComponent implements OnInit {
 
-  constructor() { }
+  id: number;
+  produto: any;
+
+  constructor(private aRoute: ActivatedRoute,
+              private _produtoService: ProductService) {
+    this.aRoute.snapshot.paramMap.get('id');
+    this.id = +this.aRoute.snapshot.paramMap.get('id')!;
+  }
 
   ngOnInit(): void {
+    this.getProduto();
+  }
+
+  getProduto(){
+    this._produtoService.getProduto(this.id).subscribe(data => {
+      this.produto = data;
+    })
   }
 
 }

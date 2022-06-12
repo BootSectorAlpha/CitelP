@@ -9,10 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListProductComponent implements OnInit {
 
-  listaProduto: Product[] = [
-    { categoria: 'info', nome: 'mouse', fabricacao: new Date(), validade: new Date(), preco: 15.90},
-    { categoria: 'info', nome: 'impressora', fabricacao: new Date(), validade: new Date(), preco: 16.90}
-  ]
+  listaProduto: Product[] = [];
 
   constructor(private _produtoService: ProductService) { }
 
@@ -22,9 +19,19 @@ export class ListProductComponent implements OnInit {
 
   getProdutos(){
     this._produtoService.getlistProdutos().subscribe(data => {
-      console.log(data);
+      this.listaProduto = data;
     }, error => {
       console.log(error);
     })
   }
+
+  excluirProduto(id: any){
+    console.log(id);
+    this._produtoService.deleteProduto(id).subscribe(data => {
+      this.getProdutos();
+    }, error => {
+      console.log(error);
+    })
+  }
+
 }
