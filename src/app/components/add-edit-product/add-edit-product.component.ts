@@ -3,6 +3,7 @@ import { Produto } from './../../interfaces/Produto';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-edit-product',
@@ -19,7 +20,8 @@ export class AddEditProductComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private _produtoService: ProductService,
               private router: Router,
-              private aRoute: ActivatedRoute) {
+              private aRoute: ActivatedRoute,
+              private toastr: ToastrService) {
     this.adicionarProduto = this.fb.group({
       categoria: ['', Validators.required],
       nome: ['', Validators.required],
@@ -69,6 +71,7 @@ export class AddEditProductComponent implements OnInit {
     }
 
     this._produtoService.adicionar(produto).subscribe(data => {
+      this.toastr.success('O Produto foi Registrado com Sucesso!', 'Produto Registrado!');
       this.router.navigate(['/']);
     }, error => {
       console.log(error);
@@ -88,6 +91,7 @@ export class AddEditProductComponent implements OnInit {
     }
 
       this._produtoService.updateProduto(this.id, produto).subscribe(data => {
+        this.toastr.info('O Produto foi Editado com Sucesso!', 'Produto Atualizado!');
         this.router.navigate(['/']);
       }, error => {
         console.log(error);
