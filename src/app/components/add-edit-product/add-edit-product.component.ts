@@ -71,7 +71,7 @@ export class AddEditProductComponent implements OnInit {
     }
 
     this._produtoService.adicionar(produto).subscribe(data => {
-      this.toastr.success('O Produto foi Registrado com Sucesso!', 'Produto Registrado!');
+      this.toastr.success('Produto Registrado com Sucesso!', 'Produto Registrado!');
       this.router.navigate(['/']);
     }, error => {
       console.log(error);
@@ -91,7 +91,7 @@ export class AddEditProductComponent implements OnInit {
     }
 
       this._produtoService.updateProduto(this.id, produto).subscribe(data => {
-        this.toastr.info('O Produto foi Editado com Sucesso!', 'Produto Atualizado!');
+        this.toastr.info('Produto Editado com Sucesso!', 'Produto Atualizado!');
         this.router.navigate(['/']);
       }, error => {
         console.log(error);
