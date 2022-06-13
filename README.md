@@ -1,4 +1,4 @@
-# CitelP-Produto-v.0.1
+# CitelP-Produto-v.0.2
 
 Passo-a-passo Para Execução da Aplicação
 
@@ -21,11 +21,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Versionamento
 
-- Esta aplicação trata-se de uma versão inicial, a "CitelP-Produto-v.0.1". Outra versão refatorada "CitelP-Produto-Categoria-v.0.2" com entidades "Categoria" e "Produto" implementadas poderá entrar em produção com o prazo de entrega extendido.
+- Esta aplicação trata-se de uma versão inicial, a "CitelP-Produto-v.0.2". Outra versão refatorada "CitelP-Produto-Categoria-v.0.3" com entidades "Categoria" e "Produto" implementadas separadas poderá entrar em produção com o prazo de entrega extendido.
 
 # Usabilidade 
 
-- A aplicação está aberta ao público geral para download e testes. Não há qualquer fim lucrativo com a publicação do projeto.
+- A aplicação está aberta ao público geral para download e testes. Não há qualquer fim lucrativo com a publicação deste  projeto.
 
 
 
