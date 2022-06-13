@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FX01AsdrV0A2twmdd+qCUFchBRztG/ZX9q4qZz3YDoRoL1M68mRGwm4AqStBBrDUxl2DI9TLJkVHwdgrPAXDEQ==",
+  "dgSpecHash": "quG1qtHLMERyC783ZvP2yz5tMxo9irrBU48BUxEApn8KDcIr6ypEXdUsLuBp4/oqKeSNX5soEw6R82ALrwAx3A==",
   "success": true,
   "projectFilePath": "D:\\Projetos\\Git\\CitelP\\CitelP\\CitelP\\CitelP.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\Lutiell\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.3\\microsoft.entityframeworkcore.analyzers.5.0.3.nupkg.sha512",
     "C:\\Users\\Lutiell\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.3\\microsoft.entityframeworkcore.design.5.0.3.nupkg.sha512",
     "C:\\Users\\Lutiell\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.3\\microsoft.entityframeworkcore.relational.5.0.3.nupkg.sha512",
+    "C:\\Users\\Lutiell\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.0\\microsoft.entityframeworkcore.tools.5.0.0.nupkg.sha512",
     "C:\\Users\\Lutiell\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Lutiell\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Lutiell\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",

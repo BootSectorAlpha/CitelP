@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,18 +8,18 @@ namespace CitelP.Models
 {
     public class Produto
     {
-        public int Id { get; set; }
+    public int Id { get; set; }
 
-        [Required]
-        public string Categoria { get; set; }
+    [Required]
+    public string Nome { get; set; }
 
-        [Required]
-        public string Nome { get; set; }
+    public DateTime Fabricacao { get; set; }
 
-        public DateTime Fabricacao { get; set; }
+    public DateTime Validade { get; set; }
 
-        public DateTime Validade { get; set; }
+    public float Preco { get; set; }
 
-        public float Preco { get; set; }
-    }
+    public Categoria IdCategoria { get; set; }
+
+  }
 }
