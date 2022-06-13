@@ -1,27 +1,31 @@
-# CitelP
+# CitelP-Produto-v.0.1
+
+Passo-a-passo Para Execução da Aplicação
+
+==========Importação do Banco de Dados Para o MySQL Workbench============
+
+- Importe a base de dados "BD_CitelP-Produto-v.0.1.sql" para o MySQL Workbench: Server => Data Import => Import from Self-Contained File (selecione BD_CitelP-Produto-v.0.1.sql) => Import Progress => Start Import.
+
+=======================Execução do Backend===============================
+
+- Abra o diretório CitelP, o subdiretório CitelP e execute o "Citelp.sln". Execute a aplicação backend com o botão "F5".
+
+
+========================Execução do Frontend=============================
+
+- Abra o diretório Citelp, clique com botão direito do mouse, "Abrir com Code" ou digite "Winkey + R" e digite "code .".
+- Tecle "Ctrl + Shift + '", e execute o frontend com o comando "ng serve --o"
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Versionamento
 
-## Code scaffolding
+- Esta aplicação trata-se de uma versão inicial, a "CitelP-Produto-v.0.1". Outra versão refatorada "CitelP-Produto-Categoria-v.0.2" com entidades "Categoria" e "Produto" implementadas poderá entrar em produção com o prazo de entrega extendido.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Usabilidade 
 
-## Build
+- A aplicação está aberta ao público geral para download e testes. Não há qualquer fim lucrativo com a publicação do projeto.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
