@@ -1,0 +1,6 @@
+D:\Projetos\Git\CitelP\CategoriaP\obj\Debug\net6.0\CategoriaP.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projetos\Git\CitelP\CategoriaP\obj\Debug\net6.0\CategoriaP.AssemblyInfoInputs.cache
+D:\Projetos\Git\CitelP\CategoriaP\obj\Debug\net6.0\CategoriaP.AssemblyInfo.cs
+D:\Projetos\Git\CitelP\CategoriaP\obj\Debug\net6.0\CategoriaP.csproj.CoreCompileInputs.cache
+D:\Projetos\Git\CitelP\CategoriaP\obj\Debug\net6.0\CategoriaP.MvcApplicationPartsAssemblyInfo.cs
+D:\Projetos\Git\CitelP\CategoriaP\obj\Debug\net6.0\CategoriaP.MvcApplicationPartsAssemblyInfo.cache
