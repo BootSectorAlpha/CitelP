@@ -10,9 +10,9 @@ namespace CitelP
   public class CategoriaServico : ICategoriaServico
   {
 
-    private readonly ICategoriaRespositorio _categoriaRepositorio;
+    private readonly ICategoriaRepositorio _categoriaRepositorio;
 
-    public CategoriaServico(ICategoriaRespositorio categoriaRepositorio)
+    public CategoriaServico(ICategoriaRepositorio categoriaRepositorio)
     {
       _categoriaRepositorio = categoriaRepositorio;
     }

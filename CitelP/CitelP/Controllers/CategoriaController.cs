@@ -15,9 +15,9 @@ namespace CitelP.Controllers
   public class CategoriaController : ControllerBase
   {
 
-    private readonly AppDbContextCategoria _context;
+    private readonly AppDbContext _context;
 
-    public CategoriaController(AppDbContextCategoria context)
+    public CategoriaController(AppDbContext context)
     {
       _context = context;
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CitelP.Servicos
 {
-  public interface ICategoriaRespositorio
+  public interface ICategoriaRepositorio
   {
     Task<IEnumerable<Categoria>> ListAsync();
   }
