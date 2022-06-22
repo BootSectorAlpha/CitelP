@@ -52,7 +52,8 @@ namespace CitelP
       services.AddScoped<ICategoriaServico, CategoriaServico>();
 
       //vinculando nosso serviço e repositório às respectivas classes.
-
+      /*(AddScoped indica para reutilizar a mesma criação de uma classe "instância" 
+       quando necessário)*/
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
