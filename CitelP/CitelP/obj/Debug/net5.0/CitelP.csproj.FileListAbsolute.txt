@@ -70,3 +70,10 @@ D:\Projetos\Git\CitelP\CitelP\CitelP\obj\Debug\net5.0\CitelP.dll
 D:\Projetos\Git\CitelP\CitelP\CitelP\obj\Debug\net5.0\ref\CitelP.dll
 D:\Projetos\Git\CitelP\CitelP\CitelP\obj\Debug\net5.0\CitelP.pdb
 D:\Projetos\Git\CitelP\CitelP\CitelP\obj\Debug\net5.0\CitelP.genruntimeconfig.cache
+D:\Projetos\Git\CitelP\CitelP\CitelP\bin\Debug\net5.0\AutoMapper.dll
+D:\Projetos\Git\CitelP\CitelP\CitelP\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Projetos\Git\CitelP\CitelP\CitelP\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Projetos\Git\CitelP\CitelP\CitelP\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+D:\Projetos\Git\CitelP\CitelP\CitelP\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+D:\Projetos\Git\CitelP\CitelP\CitelP\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+D:\Projetos\Git\CitelP\CitelP\CitelP\obj\Debug\net5.0\CitelP.csproj.CopyComplete
