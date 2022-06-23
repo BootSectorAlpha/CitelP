@@ -62,6 +62,8 @@ namespace CitelP.Controllers
     {
       if (!ModelState.IsValid)
         return BadRequest(ModelState.GetErrorMessages());
+
+      var categoria = _mapper.Map<SaveCategoriaResource, Categoria>(resource);
     }
   } 
 }
