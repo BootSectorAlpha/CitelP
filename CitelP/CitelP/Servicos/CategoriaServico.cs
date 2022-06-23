@@ -1,5 +1,6 @@
 using CitelP.Models;
 using CitelP.Servicos;
+using CitelP.Servicos.Comunicacao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,12 @@ namespace CitelP
   {
 
     private readonly ICategoriaRepositorio _categoriaRepositorio;
+    private readonly IUnidadeDeTrabalhoRepositorio _unidadeDeTrabalho;
 
-    public CategoriaServico(ICategoriaRepositorio categoriaRepositorio)
+    public CategoriaServico(ICategoriaRepositorio categoriaRepositorio, IUnidadeDeTrabalhoRepositorio unidadeDeTrabalho)
     {
       _categoriaRepositorio = categoriaRepositorio;
+      _unidadeDeTrabalho = unidadeDeTrabalho;
     }
 
     public async Task<IEnumerable<Categoria>> ListAsync()
@@ -22,5 +25,20 @@ namespace CitelP
       return await _categoriaRepositorio.ListAsync();
     }
 
+    public async Task<SaveCategoriaResponse> SaveAsync(Categoria category)
+    {
+      try
+      {
+        await _categoriaRepositorio.AddAsync(category);
+        await _unidadeDeTrabalho.CompleteAsync();
+
+        return new SaveCategoriaResponse(category);
+      }
+      catch (Exception ex)
+      {
+        // Do some logging stuff
+        return new SaveCategoriaResponse($"An error occurred when saving the category: {ex.Message}");
+      }
+    }
   }
 }

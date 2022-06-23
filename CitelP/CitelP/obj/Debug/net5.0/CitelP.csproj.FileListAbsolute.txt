@@ -76,3 +76,4 @@ D:\Projetos\Git\CitelP\CitelP\CitelP\obj\Debug\net5.0\CitelP.dll
 D:\Projetos\Git\CitelP\CitelP\CitelP\obj\Debug\net5.0\ref\CitelP.dll
 D:\Projetos\Git\CitelP\CitelP\CitelP\obj\Debug\net5.0\CitelP.pdb
 D:\Projetos\Git\CitelP\CitelP\CitelP\obj\Debug\net5.0\CitelP.genruntimeconfig.cache
+D:\Projetos\Git\CitelP\CitelP\CitelP\obj\Debug\net5.0\CitelP.csproj.AssemblyReference.cache

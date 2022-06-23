@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CitelP
 {
-  interface IUnidadeDeTrabalhoRepositorio
+  public interface IUnidadeDeTrabalhoRepositorio
   {
     Task CompleteAsync();
   }
