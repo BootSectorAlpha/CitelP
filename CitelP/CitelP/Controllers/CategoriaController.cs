@@ -1,4 +1,5 @@
 using AutoMapper;
+using CitelP.Extensoes;
 using CitelP.Models;
 using CitelP.Resources;
 using CitelP.Servicos;
@@ -54,6 +55,13 @@ namespace CitelP.Controllers
       /*Após a finalização desta implementação, teste a API no navegador com o comando
        "https://localhost:5001/api/categoria". Verá que não retornará via JSON o array
        de Produtos da model Categoria do BD.*/
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> PostAsync([FromBody] SaveCategoriaResource resource)
+    {
+      if (!ModelState.IsValid)
+        return BadRequest(ModelState.GetErrorMessages());
     }
   } 
 }
