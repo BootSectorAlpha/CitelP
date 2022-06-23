@@ -9,5 +9,6 @@ namespace CitelP.Servicos
   public interface ICategoriaRepositorio
   {
     Task<IEnumerable<Categoria>> ListAsync();
+    Task AddAsync(Categoria categoria);
   }
 }
