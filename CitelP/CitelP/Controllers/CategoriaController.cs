@@ -50,6 +50,10 @@ namespace CitelP.Controllers
       //{
       //  return BadRequest(ex.Message);
       //}
+
+      /*Após a finalização desta implementação, teste a API no navegador com o comando
+       "https://localhost:5001/api/categoria". Verá que não retornará via JSON o array
+       de Produtos da model Categoria do BD.*/
     }
   } 
 }
