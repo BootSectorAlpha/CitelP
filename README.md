@@ -21,7 +21,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Versionamento
 
-- Esta aplicação trata-se de uma versão in com entidades "Categoria" e "Produto" implementadas separadas.
+- Esta aplicação trata-se de uma versão com entidades "Categoria" e "Produto" implementadas separadas.
 
 # Usabilidade 
 
