@@ -18,5 +18,11 @@ namespace CitelP
     {
       return await _context.Categoria.ToListAsync();
     }
+
+    public async Task AddAsync(Categoria categoria)
+    {
+      await _context.Categoria.AddAsync(categoria);
+    }
+
   }
 }
