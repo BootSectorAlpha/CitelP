@@ -25,8 +25,16 @@ namespace CitelP.Controllers
     [HttpGet]
     public async Task<IActionResult> Get()
     {
-      var categorias = await _context.Categoria.ToListAsync();
-      return Ok(categorias);
+      try
+      {
+        var categorias = await _context.Categoria.ToListAsync();
+        return Ok(categorias);
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex.Message);
+      }
+      
     }
 
   }
