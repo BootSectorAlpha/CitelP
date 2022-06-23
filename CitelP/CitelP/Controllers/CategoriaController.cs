@@ -64,6 +64,13 @@ namespace CitelP.Controllers
         return BadRequest(ModelState.GetErrorMessages());
 
       var categoria = _mapper.Map<SaveCategoriaResource, Categoria>(resource);
+      var result = await _categoriaServico.SaveAsync(categoria);
+
+      if (!result.Success)
+        return BadRequest(result.Message);
+
+      var categoriaResource = _mapper.Map<Categoria, CategoriaResource>(result.Categoria);
+      return Ok(categoriaResource);
     }
   } 
 }
