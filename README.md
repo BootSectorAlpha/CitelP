@@ -1,4 +1,4 @@
-# CitelP-Produto-v.0.2
+# CitelP-Produto-Categoria-v.0.6
 
 Passo-a-passo Para Execução da Aplicação
 
@@ -21,7 +21,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Versionamento
 
-- Esta aplicação trata-se de uma versão com entidades "Categoria" e "Produto" implementadas separadas.
+- Esta aplicação trata-se da versão "CitelP-Produto-Categoria-v.0.6" com entidades "Categoria" e "Produto" implementadas separadas.
 
 # Usabilidade 
 
