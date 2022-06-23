@@ -31,12 +31,19 @@ namespace CitelP
 
       builder.Entity<Categoria>().HasData
       (
-          new Categoria { Id = 100, Nome = "Informática" }, // Id configurado manualmente devido ao in-memory provider
-          new Categoria { Id = 101, Nome = "Eletrônica" },
-          new Categoria { Id = 101, Nome = "Alimento" },
-          new Categoria { Id = 101, Nome = "Móvel" },
-          new Categoria { Id = 101, Nome = "Imóvel" },
-          new Categoria { Id = 101, Nome = "Ação" }
+        //new Categoria { Id = 100, Nome = "Informática" }, // Id configurado manualmente devido ao in-memory provider
+        //new Categoria { Id = 101, Nome = "Eletrônica" },
+        //new Categoria { Id = 101, Nome = "Alimento" },
+        //new Categoria { Id = 101, Nome = "Móvel" },
+        //new Categoria { Id = 101, Nome = "Imóvel" },
+        //new Categoria { Id = 101, Nome = "Ação" }
+
+        new Categoria { Id = 1, Nome = "Informática" }, // Id configurado manualmente devido ao in-memory provider
+          new Categoria { Id = 2, Nome = "Eletrônica" },
+          new Categoria { Id = 3, Nome = "Alimento" },
+          new Categoria { Id = 4, Nome = "Móvel" },
+          new Categoria { Id = 5, Nome = "Imóvel" },
+          new Categoria { Id = 6, Nome = "Ação" }
       );
 
       builder.Entity<Produto>().ToTable("Produtos");
