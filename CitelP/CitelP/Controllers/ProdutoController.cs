@@ -32,11 +32,10 @@ namespace CitelP.Controllers
             }
             catch (Exception ex)
             {
-
                 return BadRequest(ex.Message);
             }
     }
-    //mÈtodo acima È respons·vel por listar os produtos
+    //m√©todo acima √© respons√°vel por listar os produtos
 
     // GET api/<ProdutoController>/5
     [HttpGet("{id}")]

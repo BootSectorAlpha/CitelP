@@ -32,7 +32,6 @@ namespace CitelP.Controllers
       }
       catch (Exception ex)
       {
-
         return BadRequest(ex.Message);
       }
       
