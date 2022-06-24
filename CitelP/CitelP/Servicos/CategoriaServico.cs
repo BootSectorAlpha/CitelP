@@ -66,17 +66,17 @@ namespace CitelP
 
     public async Task<CategoriaResponse> DeleteAsync(int id)
     {
-      var existingCategory = await _categoriaRepositorio.FindByIdAsync(id);
+      var existindoCategoria = await _categoriaRepositorio.FindByIdAsync(id);
 
-      if (existingCategory == null)
+      if (existindoCategoria == null)
         return new CategoriaResponse("Categoria não Encontrada.");
 
       try
       {
-        _categoriaRepositorio.Remove(existingCategory);
+        _categoriaRepositorio.Remove(existindoCategoria);
         await _unidadeDeTrabalho.CompleteAsync();
 
-        return new CategoriaResponse(existingCategory);
+        return new CategoriaResponse(existindoCategoria);
       }
       catch (Exception ex)
       {
