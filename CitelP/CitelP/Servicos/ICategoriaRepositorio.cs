@@ -16,6 +16,6 @@ namespace CitelP.Servicos
 
     void Update(Categoria categoria);
 
-    //A API do EF Core não requer um método assíncrono para atualizar modelos.
+    //*A API do EF Core não requer um método assíncrono para update na controller*.
   }
 }
