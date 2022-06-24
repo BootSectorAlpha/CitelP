@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CitelP.Servicos.Comunicacao
 {
-    public class SaveCategoriaResponse : BaseResponse
+    public class CategoriaResponse : BaseResponse
     {
       public Categoria Categoria { get; private set; }
 
-      private SaveCategoriaResponse(bool success, string message, Categoria categoria) : base(success, message)
+      private CategoriaResponse(bool success, string message, Categoria categoria) : base(success, message)
       {
         Categoria = categoria;
       }
@@ -20,7 +20,7 @@ namespace CitelP.Servicos.Comunicacao
       /// </summary>
       /// <param name="categoria">Saved category.</param>
       /// <returns>Response.</returns>
-      public SaveCategoriaResponse(Categoria categoria) : this(true, string.Empty, categoria)
+      public CategoriaResponse(Categoria categoria) : this(true, string.Empty, categoria)
       { }
 
       /// <summary>
@@ -28,7 +28,7 @@ namespace CitelP.Servicos.Comunicacao
       /// </summary>
       /// <param name="message">Error message.</param>
       /// <returns>Response.</returns>
-      public SaveCategoriaResponse(string message) : this(false, message, null)
+      public CategoriaResponse(string message) : this(false, message, null)
       { }
     }
   

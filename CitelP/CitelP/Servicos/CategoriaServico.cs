@@ -25,28 +25,28 @@ namespace CitelP
       return await _categoriaRepositorio.ListAsync();
     }
 
-    public async Task<SaveCategoriaResponse> SaveAsync(Categoria category)
+    public async Task<CategoriaResponse> SaveAsync(Categoria category)
     {
       try
       {
         await _categoriaRepositorio.AddAsync(category);
         await _unidadeDeTrabalho.CompleteAsync();
 
-        return new SaveCategoriaResponse(category);
+        return new CategoriaResponse(category);
       }
       catch (Exception ex)
       {
         // Do some logging stuff
-        return new SaveCategoriaResponse($"Um Erro Ocorreu ao Salvar a Categoria: {ex.Message}");
+        return new CategoriaResponse($"Um Erro Ocorreu ao Salvar a Categoria: {ex.Message}");
       }
     }
 
-    public async Task<SaveCategoriaResponse> UpdateAsync(int id, Categoria categoria)
+    public async Task<CategoriaResponse> UpdateAsync(int id, Categoria categoria)
     {
       var existindoCategoria = await _categoriaRepositorio.FindByIdAsync(id);
 
       if (existindoCategoria == null)
-        return new SaveCategoriaResponse("Categoria não Encontrada.");
+        return new CategoriaResponse("Categoria não Encontrada.");
 
       existindoCategoria.Nome = categoria.Nome;
 
@@ -55,12 +55,12 @@ namespace CitelP
         _categoriaRepositorio.Update(existindoCategoria);
         await _unidadeDeTrabalho.CompleteAsync();
 
-        return new SaveCategoriaResponse(existindoCategoria);
+        return new CategoriaResponse(existindoCategoria);
       }
       catch (Exception ex)
       {
         // Do some logging stuff
-        return new SaveCategoriaResponse($"Um Erro Ocorreu ao Atualizar a Categoria: {ex.Message}");
+        return new CategoriaResponse($"Um Erro Ocorreu ao Atualizar a Categoria: {ex.Message}");
       }
     }
   }
