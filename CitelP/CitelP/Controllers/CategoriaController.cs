@@ -88,6 +88,18 @@ namespace CitelP.Controllers
       var categoriaResource = _mapper.Map<Categoria, CategoriaResource>(result.Categoria);
       return Ok(categoriaResource);
     }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteAsync(int id)
+    {
+      var result = await _categoriaServico.DeleteAsync(id);
+
+      if (!result.Success)
+        return BadRequest(result.Message);
+
+      var categoryResource = _mapper.Map<Categoria, CategoriaResource>(result.Category);
+      return Ok(categoryResource);
+    }
   } 
 }
 
