@@ -1,5 +1,7 @@
 using AutoMapper;
 using CitelP.Models;
+using CitelP.Resources;
+using CitelP.Servicos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -29,7 +31,7 @@ namespace CitelP.Controllers
     {
       
         var produtos = await _produtoServico.ListAsync();
-        var resources = _mapper.Map<IEnumerable<Produto>, IEnumerable<ProdutoResource>>(produto);
+        var resources = _mapper.Map<IEnumerable<Produto>, IEnumerable<ProdutoResource>>(produtos);
         return resources;
      
  
@@ -37,86 +39,86 @@ namespace CitelP.Controllers
     //método acima é responsável por listar os produtos
 
     // GET api/<ProdutoController>/5
-    [HttpGet("{id}")]
-    public async Task<IActionResult> Get(int id)
-    {
-      try
-      {
-        var produto = await _context.Produto.FindAsync(id);
+    //[HttpGet("{id}")]
+    //public async Task<IActionResult> Get(int id)
+    //{
+    //  try
+    //  {
+    //    var produto = await _context.Produto.FindAsync(id);
 
-        if (produto == null)
-        {
-          return NotFound();
-        }
+    //    if (produto == null)
+    //    {
+    //      return NotFound();
+    //    }
 
-        return Ok(produto);
-      }
-      catch (Exception ex)
-      {
-        return BadRequest(ex.Message);
-      }
-    }
+    //    return Ok(produto);
+    //  }
+    //  catch (Exception ex)
+    //  {
+    //    return BadRequest(ex.Message);
+    //  }
+    //}
 
-    // POST api/<ProdutoController>
-    [HttpPost]
-    public async Task<IActionResult> Post([FromBody] Produto produto)
-    {
-      try
-      {
-        _context.Add(produto);
-        await _context.SaveChangesAsync();
+    //// POST api/<ProdutoController>
+    //[HttpPost]
+    //public async Task<IActionResult> Post([FromBody] Produto produto)
+    //{
+    //  try
+    //  {
+    //    _context.Add(produto);
+    //    await _context.SaveChangesAsync();
 
-        return Ok(produto);
-      }
-      catch (Exception ex)
-      {
-        return BadRequest(ex.Message);
-      }
-    }
+    //    return Ok(produto);
+    //  }
+    //  catch (Exception ex)
+    //  {
+    //    return BadRequest(ex.Message);
+    //  }
+    //}
 
-    // PUT api/<ProdutoController>/5
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Put(int id, [FromBody] Produto produto)
-    {
-      try
-      {
-        if (id != produto.Id)
-        {
-          return BadRequest();
-        }
+    //// PUT api/<ProdutoController>/5
+    //[HttpPut("{id}")]
+    //public async Task<IActionResult> Put(int id, [FromBody] Produto produto)
+    //{
+    //  try
+    //  {
+    //    if (id != produto.Id)
+    //    {
+    //      return BadRequest();
+    //    }
 
-        _context.Update(produto);
-        await _context.SaveChangesAsync();
-        return Ok(new { message = "Produto Atualizado com Sucesso!" });
-      }
-      catch (Exception ex)
-      {
-        return BadRequest(ex.Message);
-      }
-    }
+    //    _context.Update(produto);
+    //    await _context.SaveChangesAsync();
+    //    return Ok(new { message = "Produto Atualizado com Sucesso!" });
+    //  }
+    //  catch (Exception ex)
+    //  {
+    //    return BadRequest(ex.Message);
+    //  }
+    //}
 
-    // DELETE api/<ProdutoController>/5
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
-    {
+    //// DELETE api/<ProdutoController>/5
+    //[HttpDelete("{id}")]
+    //public async Task<IActionResult> Delete(int id)
+    //{
 
-      try
-      {
-        var produto = await _context.Produto.FindAsync(id);
+    //  try
+    //  {
+    //    var produto = await _context.Produto.FindAsync(id);
 
-        if (produto == null)
-        {
-          return NotFound();
-        }
+    //    if (produto == null)
+    //    {
+    //      return NotFound();
+    //    }
 
-        _context.Produto.Remove(produto);
-        await _context.SaveChangesAsync();
-        return Ok(new { message = "Produto Eliminado com Sucesso!" });
-      }
-      catch (Exception ex)
-      {
-        return BadRequest(ex.Message);
-      }
-    }
+    //    _context.Produto.Remove(produto);
+    //    await _context.SaveChangesAsync();
+    //    return Ok(new { message = "Produto Eliminado com Sucesso!" });
+    //  }
+    //  catch (Exception ex)
+    //  {
+    //    return BadRequest(ex.Message);
+    //  }
+    //}
   }
 }
