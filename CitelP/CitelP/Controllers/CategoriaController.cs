@@ -97,7 +97,7 @@ namespace CitelP.Controllers
       if (!result.Success)
         return BadRequest(result.Message);
 
-      var categoryResource = _mapper.Map<Categoria, CategoriaResource>(result.Category);
+      var categoryResource = _mapper.Map<Categoria, CategoriaResource>(result.Categoria);
       return Ok(categoryResource);
     }
   } 

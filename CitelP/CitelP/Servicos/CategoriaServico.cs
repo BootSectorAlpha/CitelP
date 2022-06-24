@@ -63,5 +63,26 @@ namespace CitelP
         return new CategoriaResponse($"Um Erro Ocorreu ao Atualizar a Categoria: {ex.Message}");
       }
     }
+
+    public async Task<CategoriaResponse> DeleteAsync(int id)
+    {
+      var existingCategory = await _categoriaRepositorio.FindByIdAsync(id);
+
+      if (existingCategory == null)
+        return new CategoriaResponse("Categoria não Encontrada.");
+
+      try
+      {
+        _categoriaRepositorio.Remove(existingCategory);
+        await _unidadeDeTrabalho.CompleteAsync();
+
+        return new CategoriaResponse(existingCategory);
+      }
+      catch (Exception ex)
+      {
+        // Do some logging stuff
+        return new CategoriaResponse($"Um Erro Ocorreu ao Deletar a Categoria: {ex.Message}");
+      }
+    }
   }
 }
