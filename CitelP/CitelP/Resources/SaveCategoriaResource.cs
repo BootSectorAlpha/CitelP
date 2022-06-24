@@ -4,15 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CitelP.Models
+namespace CitelP.Resources
 {
-  public class Categoria
+  public class SaveCategoriaResource
   {
-    [Required]
-    public int Id { get; set; }
-
-    [Required]
+    [MaxLength(30)]
     public string Nome { get; set; }
-    public IList<Produto> Produtos { get; set; } = new List<Produto>();
   }
 }
