@@ -14,5 +14,7 @@ namespace CitelP.Servicos
     Task<CategoriaResponse> SaveAsync(Categoria category);
 
     Task<CategoriaResponse> UpdateAsync(int id, Categoria category);
+
+    Task<CategoriaResponse> DeleteAsync(int id);
   }
 }
