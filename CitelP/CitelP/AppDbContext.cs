@@ -26,7 +26,7 @@ namespace CitelP
       builder.Entity<Categoria>().ToTable("Categorias");
       builder.Entity<Categoria>().HasKey(p => p.Id);
       builder.Entity<Categoria>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-      builder.Entity<Categoria>().Property(p => p.Nome).HasMaxLength(30);
+      builder.Entity<Categoria>().Property(p => p.Nome).IsRequired().HasMaxLength(30);
       builder.Entity<Categoria>().HasMany(p => p.Produtos).WithOne(p => p.Categoria).HasForeignKey(p => p.CategoriaId);
 
       builder.Entity<Categoria>().HasData

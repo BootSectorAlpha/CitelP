@@ -11,7 +11,7 @@ namespace CitelP.Models
     [Required]
     public int Id { get; set; }
 
- 
+    [Required]
     public string Nome { get; set; }
     public IList<Produto> Produtos { get; set; } = new List<Produto>();
   }
