@@ -71,19 +71,21 @@ namespace CitelP
     (
         new Produto
         {
-          Id = 100,
+          Id = 1,
           Nome = "Maçã",
-          Fabricacao = new DateTime(1, 1, 2022),
-          Validade = new DateTime(3, 1, 2022),
-          Preco = 3
+          Fabricacao = new DateTime(2022, 1, 1),
+          Validade = new DateTime(2022, 3, 1),
+          Preco = 2,
+          CategoriaId = 3
         },
         new Produto
         {
-          Id = 101,
+          Id = 2,
           Nome = "Uva",
-          Fabricacao = new DateTime(1, 1, 2022),
-          Validade = new DateTime(3, 1, 2022),
-          Preco = 3
+          Fabricacao = new DateTime(2022, 1, 1),
+          Validade = new DateTime(2022, 3, 1),
+          Preco = 3,
+          CategoriaId = 3
         }
     );
     }

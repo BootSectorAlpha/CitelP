@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CitelP.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220623142725_teste")]
-    partial class teste
+    [Migration("20220624225342_Categorias-Produtos")]
+    partial class CategoriasProdutos
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,6 +26,7 @@ namespace CitelP.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
+                        .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("varchar(30) CHARACTER SET utf8mb4");
 
@@ -93,12 +94,32 @@ namespace CitelP.Migrations
                     b.HasIndex("CategoriaId");
 
                     b.ToTable("Produtos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoriaId = 3,
+                            Fabricacao = new DateTime(2022, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Nome = "Maçã",
+                            Preco = 2f,
+                            Validade = new DateTime(2022, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoriaId = 3,
+                            Fabricacao = new DateTime(2022, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Nome = "Uva",
+                            Preco = 3f,
+                            Validade = new DateTime(2022, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("CitelP.Models.Produto", b =>
                 {
                     b.HasOne("CitelP.Models.Categoria", "Categoria")
-                        .WithMany("Produtos")
+                        .WithMany("Produto")
                         .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -108,7 +129,7 @@ namespace CitelP.Migrations
 
             modelBuilder.Entity("CitelP.Models.Categoria", b =>
                 {
-                    b.Navigation("Produtos");
+                    b.Navigation("Produto");
                 });
 #pragma warning restore 612, 618
         }
