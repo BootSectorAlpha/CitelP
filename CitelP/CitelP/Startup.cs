@@ -49,7 +49,7 @@ namespace CitelP
       });
 
       services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
-      services.AddScoped<ICategoriaServico, CategoriaServico>();
+      services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
       services.AddScoped<IUnidadeDeTrabalhoRepositorio, UnidadeDeTrabalho>();
 
       services.AddScoped<ICategoriaServico, CategoriaServico>();

@@ -1,5 +1,6 @@
 using CitelP.Models;
 using CitelP.Servicos;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace CitelP
 
     public async Task<IEnumerable<Produto>> ListAsync()
     {
-      return await _context.Produto.Include(p => p.Categoria)
+      return await _context.Produtos.Include(p => p.Categoria)
                                     .ToListAsync();
     }
   }

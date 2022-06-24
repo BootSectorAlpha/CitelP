@@ -62,7 +62,6 @@ D:\Projetos\Git\CitelP\CitelP\CitelP\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swa
 D:\Projetos\Git\CitelP\CitelP\CitelP\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Projetos\Git\CitelP\CitelP\CitelP\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 D:\Projetos\Git\CitelP\CitelP\CitelP\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
-D:\Projetos\Git\CitelP\CitelP\CitelP\obj\Debug\net5.0\CitelP.csproj.AssemblyReference.cache
 D:\Projetos\Git\CitelP\CitelP\CitelP\obj\Debug\net5.0\CitelP.GeneratedMSBuildEditorConfig.editorconfig
 D:\Projetos\Git\CitelP\CitelP\CitelP\obj\Debug\net5.0\CitelP.AssemblyInfoInputs.cache
 D:\Projetos\Git\CitelP\CitelP\CitelP\obj\Debug\net5.0\CitelP.AssemblyInfo.cs
