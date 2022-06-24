@@ -29,9 +29,9 @@ namespace CitelP
       return await _context.Categoria.FindAsync(id);
     }
 
-    public void Update(Categoria category)
+    public void Update(Categoria categoria)
     {
-      _context.Categoria.Update(category);
+      _context.Categoria.Update(categoria);
     }
 
   }
