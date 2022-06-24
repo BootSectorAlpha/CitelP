@@ -37,7 +37,7 @@ namespace CitelP
       catch (Exception ex)
       {
         // Do some logging stuff
-        return new SaveCategoriaResponse($"An error occurred when saving the category: {ex.Message}");
+        return new SaveCategoriaResponse($"Um Erro Ocorreu ao Salvar a Categoria: {ex.Message}");
       }
     }
   }

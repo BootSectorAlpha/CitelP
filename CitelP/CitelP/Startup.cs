@@ -56,6 +56,8 @@ namespace CitelP
        quando necessário)*/
 
       services.AddAutoMapper(typeof(Startup));
+
+      services.AddScoped<IUnidadeDeTrabalhoRepositorio, UnidadeDeTrabalho>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -81,7 +83,7 @@ namespace CitelP
         endpoints.MapControllers();
       });
 
-     
+
     }
   }
 }
