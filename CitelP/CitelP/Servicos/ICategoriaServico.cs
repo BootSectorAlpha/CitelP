@@ -10,6 +10,9 @@ namespace CitelP.Servicos
   public interface ICategoriaServico
   {
     Task<IEnumerable<Categoria>> ListAsync();
+
     Task<SaveCategoriaResponse> SaveAsync(Categoria category);
+
+    Task<SaveCategoriaResponse> UpdateAsync(int id, Categoria category);
   }
 }
