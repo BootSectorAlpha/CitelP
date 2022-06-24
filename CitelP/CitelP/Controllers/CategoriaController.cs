@@ -72,6 +72,22 @@ namespace CitelP.Controllers
       var categoriaResource = _mapper.Map<Categoria, CategoriaResource>(result.Categoria);
       return Ok(categoriaResource);
     }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> PutAsync(int id, [FromBody] SaveCategoriaResource resource)
+    {
+      if (!ModelState.IsValid)
+        return BadRequest(ModelState.GetErrorMessages());
+
+      var categoria = _mapper.Map<SaveCategoriaResource, Categoria>(resource);
+      var result = await _categoriaServico.UpdateAsync(id, categoria);
+
+      if (!result.Success)
+        return BadRequest(result.Message);
+
+      var categoriaResource = _mapper.Map<Categoria, CategoriaResource>(result.Category);
+      return Ok(categoriaResource);
+    }
   } 
 }
 
