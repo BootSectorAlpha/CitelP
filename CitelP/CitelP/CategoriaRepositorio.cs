@@ -34,5 +34,10 @@ namespace CitelP
       _context.Categoria.Update(categoria);
     }
 
+    public void Remove(Categoria categoria)
+    {
+      _context.Categoria.Remove(categoria);
+    }
+
   }
 }
