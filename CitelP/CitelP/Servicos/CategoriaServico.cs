@@ -40,5 +40,28 @@ namespace CitelP
         return new SaveCategoriaResponse($"Um Erro Ocorreu ao Salvar a Categoria: {ex.Message}");
       }
     }
+
+    public async Task<SaveCategoriaResponse> UpdateAsync(int id, Categoria categoria)
+    {
+      var existindoCategoria = await _categoriaRepositorio.FindByIdAsync(id);
+
+      if (existindoCategoria == null)
+        return new SaveCategoriaResponse("Categoria não Encontrada.");
+
+      existindoCategoria.Nome = categoria.Nome;
+
+      try
+      {
+        _categoriaRepositorio.Update(existindoCategoria);
+        await _unidadeDeTrabalho.CompleteAsync();
+
+        return new SaveCategoriaResponse(existindoCategoria);
+      }
+      catch (Exception ex)
+      {
+        // Do some logging stuff
+        return new SaveCategoriaResponse($"Um Erro Ocorreu ao Atualizar a Categoria: {ex.Message}");
+      }
+    }
   }
 }
