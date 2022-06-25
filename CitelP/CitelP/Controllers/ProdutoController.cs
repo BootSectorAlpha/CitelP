@@ -41,18 +41,44 @@ namespace CitelP.Controllers
       if (!ModelState.IsValid)
         return BadRequest(ModelState.GetErrorMessages());
 
-      try
-      {
+    
         var produto = _mapper.Map<SaveProdutoResource, Produto>(resource);
         var result = await _produtoServico.SaveAsync(produto);
 
-        var produtoResource = _mapper.Map<Produto, ProdutoResource>(result.Produto);
+      if(!result.Success)
+        return BadRequest(result.Message);
+
+      var produtoResource = _mapper.Map<Produto, ProdutoResource>(result.Produto);
         return Ok(produtoResource);
-      }
-      catch (Exception ex)
-      {
-        return BadRequest(ex.Message);
-      }
+     
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> PutAsync(int id, [FromBody] SaveProdutoResource resource)
+    {
+      if (!ModelState.IsValid)
+        return BadRequest(ModelState.GetErrorMessages());
+
+      var produto = _mapper.Map<SaveProdutoResource, Produto>(resource);
+      var result = await _produtoServico.UpdateAsync(id, produto);
+
+      if (!result.Success)
+        return BadRequest(result.Message);
+
+      var produtoResource = _mapper.Map<Produto, ProdutoResource>(result.Produto);
+      return Ok(produtoResource);
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteAsync(int id)
+    {
+      var result = await _produtoServico.DeleteAsync(id);
+
+      if (!result.Success)
+        return BadRequest(result.Message);
+
+      var produtoResource = _mapper.Map<Produto, ProdutoResource>(result.Produto);
+      return Ok(produtoResource );
     }
 
     //método acima é responsável por listar os produtos
