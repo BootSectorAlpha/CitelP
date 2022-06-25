@@ -19,10 +19,8 @@ namespace CitelP.Models
 
     //[Required]
     public DateTime Validade { get; set; }
-
    
     public float Preco { get; set; }
-
 
     public int CategoriaId { get; set; }
     public Categoria Categoria { get; set; }
