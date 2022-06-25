@@ -25,14 +25,14 @@ namespace CitelP
       return await _categoriaRepositorio.ListAsync();
     }
 
-    public async Task<CategoriaResponse> SaveAsync(Categoria category)
+    public async Task<CategoriaResponse> SaveAsync(Categoria categoria)
     {
       try
       {
-        await _categoriaRepositorio.AddAsync(category);
+        await _categoriaRepositorio.AddAsync(categoria);
         await _unidadeDeTrabalho.CompleteAsync();
 
-        return new CategoriaResponse(category);
+        return new CategoriaResponse(categoria);
       }
       catch (Exception ex)
       {

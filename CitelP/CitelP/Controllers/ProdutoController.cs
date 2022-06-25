@@ -36,7 +36,7 @@ namespace CitelP.Controllers
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post([FromBody] SaveProdutoResource resource)
+    public async Task<IActionResult> PostAsync([FromBody] SaveProdutoResource resource)
     {
       if (!ModelState.IsValid)
         return BadRequest(ModelState.GetErrorMessages());

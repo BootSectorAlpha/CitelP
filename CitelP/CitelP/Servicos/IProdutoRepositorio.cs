@@ -9,5 +9,7 @@ namespace CitelP.Servicos
   public interface IProdutoRepositorio
   {
     Task<IEnumerable<Produto>> ListAsync();
+
+    Task AddAsync(Produto produto);
   }
 }
