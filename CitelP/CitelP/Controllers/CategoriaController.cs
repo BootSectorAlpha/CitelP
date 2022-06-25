@@ -14,7 +14,6 @@ using System.Threading.Tasks;
 namespace CitelP.Controllers
 {
   [Route("api/[controller]")]
-  [ApiController]
   public class CategoriaController : ControllerBase
   {
 
