@@ -1,4 +1,5 @@
 using AutoMapper;
+using CitelP.Extensoes;
 using CitelP.Models;
 using CitelP.Resources;
 using CitelP.Servicos;
@@ -28,14 +29,32 @@ namespace CitelP.Controllers
     // GET: api/<ProdutoController>
     [HttpGet]
     public async Task<IEnumerable<ProdutoResource>> ListAsync()
-    {
-      
+    {     
         var produtos = await _produtoServico.ListAsync();
         var resources = _mapper.Map<IEnumerable<Produto>, IEnumerable<ProdutoResource>>(produtos);
         return resources;
-     
- 
     }
+
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody] SaveProdutoResource resource)
+    {
+      if (!ModelState.IsValid)
+        return BadRequest(ModelState.GetErrorMessages());
+
+      try
+      {
+        var produto = _mapper.Map<SaveProdutoResource, Produto>(resource);
+        var result = await _produtoServico.SaveAsync(produto);
+
+        var produtoResource = _mapper.Map<Produto, ProdutoResource>(result.Produto);
+        return Ok(produtoResource);
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex.Message);
+      }
+    }
+
     //método acima é responsável por listar os produtos
 
     //private readonly AppDbContext _context;
