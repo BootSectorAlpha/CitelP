@@ -38,29 +38,29 @@ namespace CitelP.Controllers
     }
     //método acima é responsável por listar os produtos
 
-    //    private readonly AppDbContext _context;
+    //private readonly AppDbContext _context;
 
-    //    public ProdutoController(AppDbContext context)
-    //    {
-    //        _context = context;
-    //    }
+    //public ProdutoController(AppDbContext context)
+    //{
+    //  _context = context;
+    //}
 
-    //// GET: api/<ProdutoController>
+    // GET: api/<ProdutoController>
     //[HttpGet]
     //public async Task<IActionResult> Get()
     //{
-    //        try
-    //        {
-    //            var listProdutos = await _context.Produto.ToListAsync();
-    //            return Ok(listProdutos);
-    //        }
-    //        catch (Exception ex)
-    //        {
-    //            return BadRequest(ex.Message);
-    //        }
+    //  try
+    //  {
+    //    var listProdutos = await _context.Produto.ToListAsync();
+    //    return Ok(listProdutos);
+    //  }
+    //  catch (Exception ex)
+    //  {
+    //    return BadRequest(ex.Message);
+    //  }
     //}
 
-    // GET api/<ProdutoController>/5
+
     //[HttpGet("{id}")]
     //public async Task<IActionResult> Get(int id)
     //{
