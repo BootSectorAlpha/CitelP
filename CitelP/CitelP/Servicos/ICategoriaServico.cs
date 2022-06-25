@@ -11,9 +11,9 @@ namespace CitelP.Servicos
   {
     Task<IEnumerable<Categoria>> ListAsync();
 
-    Task<CategoriaResponse> SaveAsync(Categoria category);
+    Task<CategoriaResponse> SaveAsync(Categoria categoria);
 
-    Task<CategoriaResponse> UpdateAsync(int id, Categoria category);
+    Task<CategoriaResponse> UpdateAsync(int id, Categoria categoria);
 
     Task<CategoriaResponse> DeleteAsync(int id);
   }
