@@ -12,5 +12,9 @@ namespace CitelP.Servicos
     Task<IEnumerable<Produto>> ListAsync();
 
     Task<ProdutoResponse> SaveAsync(Produto produto);
+
+    Task<ProdutoResponse> UpdateAsync(int id, Produto produto);
+
+    Task<ProdutoResponse> DeleteAsync(int id);
   }
 }

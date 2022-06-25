@@ -25,5 +25,20 @@ namespace CitelP
       await _context.Produtos.AddAsync(produto);
     }
 
+    public async Task<Produto> FindByIdAsync(int id)
+    {
+      return await _context.Produtos.FindAsync(id);
+    }
+
+    public void Update(Produto produto)
+    {
+      _context.Produtos.Update(produto);
+    }
+
+    public void Remove(Produto produto)
+    {
+      _context.Produtos.Remove(produto);
+    }
+
   }
 }
