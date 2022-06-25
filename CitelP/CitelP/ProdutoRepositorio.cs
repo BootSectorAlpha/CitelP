@@ -19,5 +19,11 @@ namespace CitelP
       return await _context.Produtos.Include(p => p.Categoria)
                                     .ToListAsync();
     }
+
+    public async Task AddAsync(Produto produto)
+    {
+      await _context.Produtos.AddAsync(produto);
+    }
+
   }
 }
