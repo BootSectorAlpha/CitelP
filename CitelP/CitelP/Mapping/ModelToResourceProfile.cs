@@ -10,11 +10,6 @@ namespace CitelP.Mapping
 {
   public class ModelToResourceProfile : Profile
   {
-    //public ModelToResourceProfile()
-    //{
-    //  CreateMap<Categoria, Produto>();
-
-    //}
     public ModelToResourceProfile()
     {
       CreateMap<Categoria, CategoriaResource>();

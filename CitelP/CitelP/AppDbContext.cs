@@ -68,10 +68,10 @@ namespace CitelP
       builder.Entity<Produto>().ToTable("Produtos");
       builder.Entity<Produto>().HasKey(p => p.Id);
       builder.Entity<Produto>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
-      builder.Entity<Produto>().Property(p => p.Nome).IsRequired().HasMaxLength(50);
-      builder.Entity<Produto>().Property(p => p.Fabricacao).IsRequired();
-      builder.Entity<Produto>().Property(p => p.Validade).IsRequired();
-      builder.Entity<Produto>().Property(p => p.Preco).IsRequired();
+      builder.Entity<Produto>().Property(p => p.Nome).HasMaxLength(50);
+      builder.Entity<Produto>().Property(p => p.Fabricacao);
+      builder.Entity<Produto>().Property(p => p.Validade);
+      builder.Entity<Produto>().Property(p => p.Preco);
 
       builder.Entity<Produto>().HasData
     (

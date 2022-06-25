@@ -13,7 +13,11 @@ namespace CitelP.Mapping
       public ResourceToModelProfile()
       {
         CreateMap<SaveCategoriaResource, Categoria>();
-      }
-    
+
+        CreateMap<SaveProdutoResource, Produto>();
+    }
+
+
+
   }
 }

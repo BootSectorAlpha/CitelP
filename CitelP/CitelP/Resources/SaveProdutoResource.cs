@@ -18,6 +18,7 @@ namespace CitelP.Resources
 
     public float Preco { get; set; }
 
+
     public CategoriaResource Categoria { get; set; }
   }
 }

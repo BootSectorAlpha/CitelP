@@ -11,13 +11,13 @@ namespace CitelP.Models
     [Required]
     public int Id { get; set; }
 
-    [Required]
+    //[Required]
     public string Nome { get; set; }
 
-    [Required]
+    //[Required]
     public DateTime Fabricacao { get; set; }
 
-    [Required]
+    //[Required]
     public DateTime Validade { get; set; }
 
    
