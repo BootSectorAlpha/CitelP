@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CitelP.Migrations
 {
-    public partial class teste : Migration
+    public partial class CategoriasProdutos : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +14,7 @@ namespace CitelP.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(type: "varchar(30) CHARACTER SET utf8mb4", maxLength: 30, nullable: true)
+                    Nome = table.Column<string>(type: "varchar(30) CHARACTER SET utf8mb4", maxLength: 30, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -56,6 +56,16 @@ namespace CitelP.Migrations
                     { 5, "Imóvel" },
                     { 6, "Ação" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Produtos",
+                columns: new[] { "Id", "CategoriaId", "Fabricacao", "Nome", "Preco", "Validade" },
+                values: new object[] { 1, 3, new DateTime(2022, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Maçã", 2f, new DateTime(2022, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) });
+
+            migrationBuilder.InsertData(
+                table: "Produtos",
+                columns: new[] { "Id", "CategoriaId", "Fabricacao", "Nome", "Preco", "Validade" },
+                values: new object[] { 2, 3, new DateTime(2022, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Uva", 3f, new DateTime(2022, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Produtos_CategoriaId",

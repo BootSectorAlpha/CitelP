@@ -16,27 +16,27 @@ namespace CitelP
 
     public async Task<IEnumerable<Categoria>> ListAsync()
     {
-      return await _context.Categoria.ToListAsync();
+      return await _context.Categorias.ToListAsync();
     }
 
     public async Task AddAsync(Categoria categoria)
     {
-      await _context.Categoria.AddAsync(categoria);
+      await _context.Categorias.AddAsync(categoria);
     }
 
     public async Task<Categoria> FindByIdAsync(int id)
     {
-      return await _context.Categoria.FindAsync(id);
+      return await _context.Categorias.FindAsync(id);
     }
 
     public void Update(Categoria categoria)
     {
-      _context.Categoria.Update(categoria);
+      _context.Categorias.Update(categoria);
     }
 
     public void Remove(Categoria categoria)
     {
-      _context.Categoria.Remove(categoria);
+      _context.Categorias.Remove(categoria);
     }
 
   }

@@ -49,7 +49,11 @@ namespace CitelP
       });
 
       services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
+      services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
+      services.AddScoped<IUnidadeDeTrabalhoRepositorio, UnidadeDeTrabalho>();
+
       services.AddScoped<ICategoriaServico, CategoriaServico>();
+      services.AddScoped<IProdutoServico, ProdutoServico>();
 
       //vinculando nosso serviço e repositório às respectivas classes.
       /*(AddScoped indica para reutilizar a mesma criação de uma classe "instância" 
