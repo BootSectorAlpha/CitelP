@@ -8,7 +8,8 @@ namespace CitelP.Resources
 {
   public class SaveCategoriaResource
   {
-    //[MaxLength(30)]
+    [Required]
+    [MaxLength(30)]
     public string Nome { get; set; }
   }
 }

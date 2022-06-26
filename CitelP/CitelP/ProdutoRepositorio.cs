@@ -16,8 +16,28 @@ namespace CitelP
 
     public async Task<IEnumerable<Produto>> ListAsync()
     {
-      return await _context.Produtos.Include(p => p.Categoria)
-                                    .ToListAsync();
+      return await _context.Produtos.Include(p => p.Categoria).ToListAsync();
     }
+
+    public async Task AddAsync(Produto produto)
+    {
+      await _context.Produtos.AddAsync(produto);
+    }
+
+    public async Task<Produto> FindByIdAsync(int id)
+    {
+      return await _context.Produtos.FindAsync(id);
+    }
+
+    public void Update(Produto produto)
+    {
+      _context.Produtos.Update(produto);
+    }
+
+    public void Remove(Produto produto)
+    {
+      _context.Produtos.Remove(produto);
+    }
+
   }
 }

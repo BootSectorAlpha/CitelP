@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CitelP.Migrations
 {
-    public partial class CategoriasProdutos : Migration
+    public partial class CategoriaProduto : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
