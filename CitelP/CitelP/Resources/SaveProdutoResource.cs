@@ -21,7 +21,6 @@ namespace CitelP.Resources
     [Required]
     public float Preco { get; set; }
 
-
     public int CategoriaId { get; set; }
   }
 }
