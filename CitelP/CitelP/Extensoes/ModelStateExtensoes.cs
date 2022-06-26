@@ -8,9 +8,9 @@ namespace CitelP.Extensoes
 {
   public static class ModelStateExtensoes
   {
-    public static List<string> GetErrorMessages(this ModelStateDictionary dictionary)
+    public static List<string> GetErrorMessages(this ModelStateDictionary dicionario)
     {
-      return dictionary.SelectMany(m => m.Value.Errors)
+      return dicionario.SelectMany(m => m.Value.Errors)
                        .Select(m => m.ErrorMessage)
                        .ToList();
     }
