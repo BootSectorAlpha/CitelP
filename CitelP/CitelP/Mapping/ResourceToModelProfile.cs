@@ -1,5 +1,6 @@
 using AutoMapper;
 using CitelP.Models;
+using CitelP.Models.Consultas;
 using CitelP.Resources;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace CitelP.Mapping
         CreateMap<SaveCategoriaResource, Categoria>();
 
         CreateMap<SaveProdutoResource, Produto>();
+
+        CreateMap<ConsultaProdutosResource, ConsultaProdutos>();
     }
 
 
