@@ -49,7 +49,8 @@ namespace CitelP.Servicos
       existindoProduto.Nome = produto.Nome;
       existindoProduto.Fabricacao = produto.Fabricacao;
       existindoProduto.Validade = produto.Validade;
-      existindoProduto.Preco= produto.Preco;
+      existindoProduto.Preco = produto.Preco;
+      existindoProduto.CategoriaId = produto.CategoriaId;
 
       try
       {

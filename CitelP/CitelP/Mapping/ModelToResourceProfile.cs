@@ -12,9 +12,13 @@ namespace CitelP.Mapping
   {
     public ModelToResourceProfile()
     {
-      CreateMap<Categoria, CategoriaResource>();
+      //var config = new MapperConfiguration(cfg =>
+      //cfg.CreateMap<Categoria, CategoriaResource>().ReverseMap().ForMember(dest => dest.Produto,
+      //opt => opt.Ignore()));
 
-      CreateMap<Produto, ProdutoResource>();
+      CreateMap<Categoria, CategoriaResource>().ReverseMap();
+
+      CreateMap<Produto, ProdutoResource>().;
     }
   }
 }

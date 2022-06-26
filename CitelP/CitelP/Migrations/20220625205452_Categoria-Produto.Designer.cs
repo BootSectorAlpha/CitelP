@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CitelP.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220625165148_Categoria-Produto")]
+    [Migration("20220625205452_Categoria-Produto")]
     partial class CategoriaProduto
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
