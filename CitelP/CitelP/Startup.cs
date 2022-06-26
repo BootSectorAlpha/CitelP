@@ -1,3 +1,4 @@
+using CitelP.Controllers.Config;
 using CitelP.Servicos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,9 +30,16 @@ namespace CitelP
     public void ConfigureServices(IServiceCollection services)
     {
 
+      services.AddMemoryCache();
+
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
-      services.AddControllers();
+      services.AddControllers().ConfigureApiBehaviorOptions(options =>
+      {
+        // Adds a custom error response factory when ModelState is invalid
+        options.InvalidModelStateResponseFactory = InvalidModelStateResponseFactory.ProduceErrorResponse;
+      });
+
       services.AddSwaggerGen(c =>
       {
         c.SwaggerDoc("v1", new OpenApiInfo { Title = "CitelP", Version = "v1" });
@@ -61,7 +69,6 @@ namespace CitelP
 
       services.AddAutoMapper(typeof(Startup));
 
-      services.AddScoped<IUnidadeDeTrabalhoRepositorio, UnidadeDeTrabalho>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

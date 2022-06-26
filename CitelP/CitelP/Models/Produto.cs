@@ -8,16 +8,12 @@ namespace CitelP.Models
 {
   public class Produto
   {
-    [Required]
     public int Id { get; set; }
 
-    //[Required]
     public string Nome { get; set; }
 
-    //[Required]
     public DateTime Fabricacao { get; set; }
 
-    //[Required]
     public DateTime Validade { get; set; }
    
     public float Preco { get; set; }

@@ -10,12 +10,16 @@ namespace CitelP.Servicos
   public class ProdutoServico : IProdutoServico
   {
     private readonly IProdutoRepositorio _produtoRepositorio;
+    private readonly ICategoriaRepositorio _categoriaRepositorio;
     private readonly IUnidadeDeTrabalhoRepositorio _unidadeDeTrabalho;
+ 
 
-    public ProdutoServico(IProdutoRepositorio produtoRepositorio, IUnidadeDeTrabalhoRepositorio unidadeDeTrabalho)
+    public ProdutoServico(IProdutoRepositorio produtoRepositorio, ICategoriaRepositorio categoriaRepositorio, IUnidadeDeTrabalhoRepositorio unidadeDeTrabalho)
     {
       _produtoRepositorio = produtoRepositorio;
+      _categoriaRepositorio = categoriaRepositorio;
       _unidadeDeTrabalho = unidadeDeTrabalho;
+
     }
 
     public async Task<IEnumerable<Produto>> ListAsync()
@@ -27,6 +31,10 @@ namespace CitelP.Servicos
     {
       try
       {
+        var existindoCategoria = await _categoriaRepositorio.FindByIdAsync(produto.CategoriaId);
+        if (existindoCategoria == null)
+          return new ProdutoResponse("Categoria Inválida.");
+
         await _produtoRepositorio.AddAsync(produto);
         await _unidadeDeTrabalho.CompleteAsync();
 
@@ -45,6 +53,10 @@ namespace CitelP.Servicos
 
       if (existindoProduto == null)
         return new ProdutoResponse("Produto não Encontrado.");
+
+      var existindoCategoria = await _categoriaRepositorio.FindByIdAsync(produto.CategoriaId);
+      if (existindoCategoria == null)
+        return new ProdutoResponse("Categoria Inválida.");
 
       existindoProduto.Nome = produto.Nome;
       existindoProduto.Fabricacao = produto.Fabricacao;
