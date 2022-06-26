@@ -1,5 +1,6 @@
 using AutoMapper;
 using CitelP.Models;
+using CitelP.Models.Consultas;
 using CitelP.Resources;
 using System;
 using System.Collections.Generic;
@@ -12,13 +13,12 @@ namespace CitelP.Mapping
   {
     public ModelToResourceProfile()
     {
-      //var config = new MapperConfiguration(cfg =>
-      //cfg.CreateMap<Categoria, CategoriaResource>().ReverseMap().ForMember(dest => dest.Produto,
-      //opt => opt.Ignore()));
 
-      CreateMap<Categoria, CategoriaResource>().ReverseMap();
+      CreateMap<Categoria, CategoriaResource>();
 
-      CreateMap<Produto, ProdutoResource>().;
+      CreateMap<Produto, ProdutoResource>();
+
+      CreateMap<ResultadoDaConsulta<Produto>, ResultadoDaConsultaResource<ProdutoResource>>();
     }
   }
 }
