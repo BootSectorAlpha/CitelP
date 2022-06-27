@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CitelP.Resources
 {
@@ -9,7 +6,6 @@ namespace CitelP.Resources
   {
     public bool Sucesso => false;
     public List<string> Mensagens { get; private set; }
-
     public ErrorResource(List<string> mensagens)
     {
       this.Mensagens = mensagens ?? new List<string>();

@@ -1,3 +1,4 @@
+import { CategoriaService } from './../../services/categoria.service';
 import { Produto } from './../../interfaces/Produto';
 import { ProductService } from './../../services/product.service';
 import { Component, OnInit } from '@angular/core';
@@ -19,9 +20,11 @@ export class SeeProductComponent implements OnInit {
     this.id = +this.aRoute.snapshot.paramMap.get('id')!;
   }
 
+
   ngOnInit(): void {
     this.getProduto();
   }
+
 
   getProduto(){
     this._produtoService.getProduto(this.id).subscribe(data => {

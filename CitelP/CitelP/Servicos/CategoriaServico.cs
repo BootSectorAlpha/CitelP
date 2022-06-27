@@ -3,17 +3,14 @@ using CitelP.Servicos;
 using CitelP.Servicos.Comunicacao;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CitelP
 {
   public class CategoriaServico : ICategoriaServico
   {
-
     private readonly ICategoriaRepositorio _categoriaRepositorio;
     private readonly IUnidadeDeTrabalhoRepositorio _unidadeDeTrabalho;
-
     public CategoriaServico(ICategoriaRepositorio categoriaRepositorio, IUnidadeDeTrabalhoRepositorio unidadeDeTrabalho)
     {
       _categoriaRepositorio = categoriaRepositorio;
@@ -40,7 +37,6 @@ namespace CitelP
         return new CategoriaResponse($"Um Erro Ocorreu ao Salvar a Categoria: {ex.Message}");
       }
     }
-
     public async Task<CategoriaResponse> UpdateAsync(int id, Categoria categoria)
     {
       var existindoCategoria = await _categoriaRepositorio.FindByIdAsync(id);
@@ -63,7 +59,6 @@ namespace CitelP
         return new CategoriaResponse($"Um Erro Ocorreu ao Atualizar a Categoria: {ex.Message}");
       }
     }
-
     public async Task<CategoriaResponse> DeleteAsync(int id)
     {
       var existindoCategoria = await _categoriaRepositorio.FindByIdAsync(id);
