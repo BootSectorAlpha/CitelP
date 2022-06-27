@@ -113,6 +113,16 @@ export class AddEditProductComponent implements OnInit {
     if(this.produto == undefined)
     {
 
+     //adiciona um novo produto
+    //  const produto: Produto =
+    //  {
+    //    categoria: this.adicionarCategoria.get('nome')?.value,
+    //    nome: this.adicionarProduto.get('nome')?.value,
+    //    fabricacao: new Date,
+    //    validade: new Date,
+    //    preco: this.adicionarProduto.get('preco')?.value
+    //  }
+
     //adiciona um novo produto
     const produto: Produto =
     {
