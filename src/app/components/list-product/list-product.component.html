@@ -20,10 +20,15 @@
   <tbody>
     <tr *ngFor="let produto of listaProduto">
       <td>
+        <a *ngFor="let categoria of listaCategoria" [routerLink]="['/see', categoria.id]">
+          {{categoria.nome}}
+        </a>
+      </td>
+      <!-- <td>
         <a [routerLink]="['/see', produto.id]">
           {{produto.categoria}}
         </a>
-      </td>
+      </td> -->
       <td>{{produto.nome}}</td>
       <td>{{produto.fabricacao | date:'dd/MM/yyyy'}}</td>
       <td>{{produto.validade | date:'dd/MM/yyyy'}}</td>

@@ -25,7 +25,6 @@ export class ProductService {
     return this.http.get(this.myAppUrl + this.myApiUrl + id);
   }
 
-  // salvarProduto(corpoProduto: Produto): Observable<any>
   adicionar(corpoProduto: Produto): Observable<any> {
     return this.http.post(this.myAppUrl + this.myApiUrl, corpoProduto);
   }

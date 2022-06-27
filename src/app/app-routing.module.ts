@@ -10,7 +10,6 @@ const routes: Routes = [
   {path: 'editar/:id', component: AddEditProductComponent },
   {path: 'see/:id', component: SeeProductComponent },
   {path: '**', redirectTo: '/', pathMatch: 'full'}
-
 ];
 
 @NgModule({
