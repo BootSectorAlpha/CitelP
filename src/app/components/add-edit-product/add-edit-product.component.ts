@@ -1,3 +1,5 @@
+import { Categoria } from './../../interfaces/Categoria';
+import { CategoriaService } from './../../services/categoria.service';
 import { ProductService } from './../../services/product.service';
 import { Produto } from './../../interfaces/Produto';
 import { Component, OnInit } from '@angular/core';
@@ -13,15 +15,23 @@ import { ToastrService } from 'ngx-toastr';
 export class AddEditProductComponent implements OnInit {
 
   adicionarProduto: FormGroup;
+  adicionarCategoria: FormGroup;
+
   acao = 'Adicionar';
+
   id = 0;
+  idCategoria = 0;
+
   produto: Produto | undefined;
+  categoria: Categoria | undefined;
 
   constructor(private fb: FormBuilder,
               private _produtoService: ProductService,
+              private _categoriaService: CategoriaService,
               private router: Router,
               private aRoute: ActivatedRoute,
-              private toastr: ToastrService) {
+              private toastr: ToastrService)
+ {
     this.adicionarProduto = this.fb.group({
       categoria: ['', Validators.required],
       nome: ['', Validators.required],
@@ -30,6 +40,11 @@ export class AddEditProductComponent implements OnInit {
       preco: ['', Validators.required]
     })
     this.id = +this.aRoute.snapshot.paramMap.get('id')!;
+
+    this.adicionarCategoria = this.fb.group({
+      nome: ['', Validators.required]
+    })
+    this.idCategoria = +this.aRoute.snapshot.paramMap.get('id')!;
   }
 
   ngOnInit(): void
@@ -37,13 +52,27 @@ export class AddEditProductComponent implements OnInit {
     this.eEditar();
   }
 
-  eEditar(){
-    if(this.id !== 0){
+  eEditar()
+  {
+    if(this.id !== 0)
+    {
       this.acao = 'Editar';
-      this._produtoService.getProduto(this.id).subscribe(data => {
+      this._categoriaService.getCategoria(this.idCategoria).subscribe(data =>
+        {
+          this.categoria = data;
+          this.adicionarCategoria.patchValue
+        ({
+          nome: data.nome
+        })
+        }, error => {
+          console.log(error);
+        })
+
+      this._produtoService.getProduto(this.id).subscribe(data =>
+      {
         this.produto = data;
-        this.adicionarProduto.patchValue({
-          categoria: data.categoria,
+        this.adicionarProduto.patchValue
+        ({
           nome: data.nome,
           fabricacao: data.fabricacao,
           validade: data.validade,
@@ -55,10 +84,44 @@ export class AddEditProductComponent implements OnInit {
     }
   }
 
+  // eEditar()
+  // {
+  //   if(this.id !== 0)
+  //   {
+  //     this.acao = 'Editar';
+  //     this._produtoService.getProduto(this.id).subscribe(data =>
+  //     {
+  //       this.produto = data;
+  //       this.adicionarProduto.patchValue
+  //       ({
+  //         categoria: data.categoria,
+  //         nome: data.nome,
+  //         fabricacao: data.fabricacao,
+  //         validade: data.validade,
+  //         preco: data.preco,
+  //       })
+  //     }, error => {
+  //       console.log(error);
+  //     })
+  //   }
+  // }
+
+
+
   adicionarEditarProduto()
   {
     if(this.produto == undefined)
     {
+
+     //adiciona um novo produto
+    //  const produto: Produto =
+    //  {
+    //    categoria: this.adicionarCategoria.get('nome')?.value,
+    //    nome: this.adicionarProduto.get('nome')?.value,
+    //    fabricacao: new Date,
+    //    validade: new Date,
+    //    preco: this.adicionarProduto.get('preco')?.value
+    //  }
 
     //adiciona um novo produto
     const produto: Produto =

@@ -1,9 +1,7 @@
 using CitelP.Models;
 using CitelP.Servicos;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CitelP
@@ -18,7 +16,6 @@ namespace CitelP
     {
       return await _context.Produtos.Include(p => p.Categoria).ToListAsync();
     }
-
     public async Task AddAsync(Produto produto)
     {
       await _context.Produtos.AddAsync(produto);
@@ -28,7 +25,6 @@ namespace CitelP
     {
       return await _context.Produtos.FindAsync(id);
     }
-
     public void Update(Produto produto)
     {
       _context.Produtos.Update(produto);
@@ -38,6 +34,5 @@ namespace CitelP
     {
       _context.Produtos.Remove(produto);
     }
-
   }
 }

@@ -2,7 +2,6 @@ using CitelP.Models;
 using CitelP.Servicos.Comunicacao;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CitelP.Servicos
@@ -12,21 +11,16 @@ namespace CitelP.Servicos
     private readonly IProdutoRepositorio _produtoRepositorio;
     private readonly ICategoriaRepositorio _categoriaRepositorio;
     private readonly IUnidadeDeTrabalhoRepositorio _unidadeDeTrabalho;
- 
-
     public ProdutoServico(IProdutoRepositorio produtoRepositorio, ICategoriaRepositorio categoriaRepositorio, IUnidadeDeTrabalhoRepositorio unidadeDeTrabalho)
     {
       _produtoRepositorio = produtoRepositorio;
       _categoriaRepositorio = categoriaRepositorio;
       _unidadeDeTrabalho = unidadeDeTrabalho;
-
     }
-
     public async Task<IEnumerable<Produto>> ListAsync()
     {
       return await _produtoRepositorio.ListAsync();
     }
-
     public async Task<ProdutoResponse> SaveAsync(Produto produto)
     {
       try
@@ -46,7 +40,6 @@ namespace CitelP.Servicos
         return new ProdutoResponse($"Um Erro Ocorreu ao Salvar o Produto: {ex.Message}");
       }
     }
-
     public async Task<ProdutoResponse> UpdateAsync(int id, Produto produto)
     {
       var existindoProduto = await _produtoRepositorio.FindByIdAsync(id);
@@ -77,7 +70,6 @@ namespace CitelP.Servicos
         return new ProdutoResponse($"Um Erro Ocorreu ao Atualizar o Produto: {ex.Message}");
       }
     }
-
     public async Task<ProdutoResponse> DeleteAsync(int id)
     {
       var existindoProduto = await _produtoRepositorio.FindByIdAsync(id);

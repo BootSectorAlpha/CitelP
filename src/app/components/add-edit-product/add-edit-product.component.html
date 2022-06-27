@@ -5,10 +5,18 @@
   <div class="mb-3">
     <label for="categoria" class="form-label">Categoria</label>
     <input formControlName="categoria"  type="text" class="form-control" id="categoria" placeholder="Insira Uma Categoria" autocomplete="off">
-    <span *ngIf="adicionarProduto.get('categoria')?.invalid && adicionarProduto.get('categoria')?.touched" class="text-danger">
+    <span *ngIf="adicionarCategoria.get('nome')?.invalid && adicionarCategoria.get('nome')?.touched" class="text-danger">
       A <strong>Categoria</strong> é obrigatória!
     </span>
   </div>
+
+  <!-- <div class="mb-3">
+    <label for="categoria" class="form-label">Categoria</label>
+    <input formControlName="categoria"  type="text" class="form-control" id="categoria" placeholder="Insira Uma Categoria" autocomplete="off">
+    <span *ngIf="adicionarProduto.get('categoria')?.invalid && adicionarProduto.get('categoria')?.touched" class="text-danger">
+      A <strong>Categoria</strong> é obrigatória!
+    </span>
+  </div> -->
 
   <div class="mb-3">
     <label for="nome" class="form-label">Nome</label>
@@ -39,4 +47,4 @@
     <button type="button" routerLink="/" class="btn btn-secondary">Voltar</button>
 </form>
 
-<!-- [disabled]="adicionarProduto.invalid" -->
+
