@@ -11,6 +11,10 @@ import { AddEditProductComponent } from './components/add-edit-product/add-edit-
 import { ListProductComponent } from './components/list-product/list-product.component';
 import { SeeProductComponent } from './components/see-product/see-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NG_ENTITY_SERVICE_CONFIG } from '@datorama/akita-ng-entity-service';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,8 +32,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    environment.production ? [] : AkitaNgDevtools.forRoot(),
+    AkitaNgRouterStoreModule,
   ],
-  providers: [],
+  providers: [{ provide: NG_ENTITY_SERVICE_CONFIG, useValue: { baseUrl: 'https://jsonplaceholder.typicode.com' }}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
