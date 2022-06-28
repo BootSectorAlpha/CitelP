@@ -1,3 +1,4 @@
+import { CategoriaComponent } from './components/categoria/categoria.component';
 import { HomePageComponentComponent } from './components/home-page-component/home-page-component.component';
 import { SeeProductComponent } from './components/see-product/see-product.component';
 import { AddEditProductComponent } from './components/add-edit-product/add-edit-product.component';
@@ -12,7 +13,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    component: CategoriaPageComponent,
+    component: CategoriaComponent,
     path: ':id'
   }
 ];

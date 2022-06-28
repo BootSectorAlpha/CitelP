@@ -1,1 +1,13 @@
-<p>home-page-component works!</p>
+<section class="container">
+  <h1>Cadastro de Produtos</h1>
+
+  <h3 *ngIf="loading$ | async; else content">Loading...</h3>
+
+  <ng-template #content>
+    <app-article-preview *ngFor="let categoria of categorias$ | async;"
+                         [categoria]="categoria"></app-article-preview>
+  </ng-template>
+
+</section>
+
+<!-- <p>home-page-component works!</p> -->

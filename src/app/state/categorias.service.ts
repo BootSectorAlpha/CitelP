@@ -12,8 +12,8 @@ export class CategoriasService {
   }
 
   async getAll() {
-    const response = await this.http.get('https://localhost:44360/api/categoria/').toPromise();
-    this.categoriasStore.set(response.data);
+    const response = await this.http.get('url').toPromise();
+    this.categoriasStore.set(response?.valueOf);
   }
 
   get() {

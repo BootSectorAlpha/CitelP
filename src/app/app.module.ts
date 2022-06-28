@@ -16,6 +16,7 @@ import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
 import { environment } from '../environments/environment';
 import { HomePageComponentComponent } from './components/home-page-component/home-page-component.component';
+import { CategoriaComponent } from './components/categoria/categoria.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomePageComponentComponent } from './components/home-page-component/hom
     AddEditProductComponent,
     ListProductComponent,
     SeeProductComponent,
-    HomePageComponentComponent
+    HomePageComponentComponent,
+    CategoriaComponent
   ],
   imports: [
     BrowserModule,
