@@ -14,7 +14,7 @@ export class CategoriaComponent implements OnInit
  {
 
   categoria$: Observable<Categoria>;
-  categoriaId: string;
+  categoriaId: id;
   selectedProduto: Produto = {} as Produto;
 
   constructor(private route: ActivatedRoute,
